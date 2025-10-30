@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>input</title>
+</head>
+<body>
+<h2>Pilih Mata Kuliah</h2>
+    <table border="12">
+        <tr>
+            <th>nomor</th>
+            <th>kode mk</th>
+            <th>mata kuliah</th>
+            <th>sks</th>
+            <th>semester</th>
+            <th>pilih</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>TIF504</td>
+            <td>PEMROGRAMAN VISUAL</td>
+            <td class="sks">3</td>
+            <td>5</td>
+            <td><input type="checkbox" name="PEMROGRAMAN VISUAL" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>TIF502</td>
+            <td>BAHASA PEMROGRAMAN LANJUTAN</td>
+            <td class="sks">3</td>
+            <td>5</td>
+            <td><input type="checkbox" name="BAHASA PEMROGRAMAN LANJUTAN" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>KPT503</td>
+            <td>TECHNOPRENEURSHIP</td>
+            <td class="sks">2</td>
+            <td>5</td>
+            <td><input type="checkbox" name="TECHNOPRENEURSHIP" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>KPT501</td>
+            <td>INTERAKSI MANUSIA DAN KOMPUTER</td>
+            <td class="sks">2</td>
+            <td>5</td>
+            <td><input type="checkbox" name="INTERAKSI MANUSIA DAN KOMPUTER" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>PIL501</td>
+            <td>PROGRAM APLIKASI MOBILE</td>
+            <td class="sks">2</td>
+            <td>5</td>
+            <td><input type="checkbox" name="PROGRAM APLIKASI MOBILE" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>TIF503</td>
+            <td>PEMROGRAMAN INTERNET</td>
+            <td class="sks">3</td>
+            <td>5</td>
+            <td><input type="checkbox" name="PEMROGRAMAN INTERNET" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>TIF501</td>
+            <td>ADMINISTRASI JARINGAN</td>
+            <td class="sks">3</td>
+            <td>5</td>
+            <td><input type="checkbox" name="ADMINISTRASI JARINGAN" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>KPT502</td>
+            <td>KOMUNIKASI DATA</td>
+            <td class="sks">3</td>
+            <td>5</td>
+            <td><input type="checkbox" name="KOMUNIKASI DATA" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>PIL502</td>
+            <td>KECERDASAN BUATAN</td>
+            <td class="sks">3</td>
+            <td>5</td>
+            <td><input type="checkbox" name="KECERDASAN BUATAN" class="Pilih"></td>
+        </tr>
+        <tr>
+            <td>jumlah</td>
+            <td></td>
+            <td><button type="button" onclick="hitungSKS()">Hitung Jumlah SKS</button></td>
+            <td><p><b></b> <span id="totalSKS">0</span></p></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table><br>
+    <input type="submit" value="konfirmasi">
+            <script>
+            function hitungSKS() {
+                let total = 0;
+                const baris = document.querySelectorAll("tr");
+                baris.forEach(row => {
+                    const checkbox = row.querySelector(".Pilih");
+                    const sks = row.querySelector(".sks");
+                    if (checkbox && sks && checkbox.checked) {
+                        total += parseInt(sks.textContent);
+                    }
+                });
+            document.getElementById("totalSKS").textContent = total;
+        }
+        </script>
+</body>
