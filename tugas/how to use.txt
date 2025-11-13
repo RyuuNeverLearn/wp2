@@ -1,0 +1,5 @@
+how to use : 
+- jalankan file html
+- centang mata kuliah
+- tekan tombol "hitung jumlah sks"
+done
